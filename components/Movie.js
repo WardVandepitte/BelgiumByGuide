@@ -101,8 +101,9 @@ const Movie = ({ data, level }) => {
               </div></a>
             ))}
           </div>
-          } \* TWAS HIER TE DOEN
-          
+          } 
+          {/*TWAS HIERBOVEN TE DOEN*/}
+
           <div className={styles.mainpicture} style={{ backgroundImage: `url("${content.mainpicture.filename}")` }}>
           </div>
           <div className={styles.imagegallery}>
