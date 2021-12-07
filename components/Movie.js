@@ -7,6 +7,7 @@ import RelatedItemGallerySmall from "./RelatedItemGallerySmall"
 import RelatedItemGallery from "./RelatedItemGallery"
 import InPageSlideshow from "./InPageSlideshow"
 import SmallCardList from "./SmallCardList"
+import AgeRating from "./AgeRating"
 
 const resolveDirectors = {
   en: 'Directors',
@@ -54,6 +55,11 @@ const Movie = ({ data, level }) => {
     var genres = data.rels.filter(obj => {
       return content.genres.includes(obj.uuid);
     })
+    if(content.agerating){
+         var agerating = data.rels.filter(obj => {
+           return content.agerating.includes(obj.uuid);
+         });
+      }
   } else {
     var content = data;
   }
@@ -88,12 +94,20 @@ const Movie = ({ data, level }) => {
               </div>
             ))}
           </div>
+          {agerating && <div className={styles.ageratinglist}>
+            {agerating.map((item, index) => (
+              <a href={`/${item.full_slug}`}><div className={styles.agerating}>
+                {item.content.title}
+              </div></a>
+            ))}
+          </div>
+          } \* TWAS HIER TE DOEN
+          
           <div className={styles.mainpicture} style={{ backgroundImage: `url("${content.mainpicture.filename}")` }}>
           </div>
           <div className={styles.imagegallery}>
             <InPageSlideshow pictures={pictures}></InPageSlideshow>
           </div>  
-
           <div className={styles.short}>
             {render(content.short)}
           </div>
@@ -106,7 +120,7 @@ const Movie = ({ data, level }) => {
               {writers && writers.length > 0 && <RelatedItemGallerySmall items={writers} title={resolveWriters[locale]} type="personality"></RelatedItemGallerySmall>}
               {stars && stars.length > 0 && <RelatedItemGallerySmall items={stars} title={resolveStars[locale]} type="personality"></RelatedItemGallerySmall>}
             </div>
-
+          
           </div>
 
           {newsitems && newsitems.length > 0 && <SmallCardList items={newsitems} title={resolveNews[locale]} type="newsitem"></SmallCardList>}
@@ -116,5 +130,6 @@ const Movie = ({ data, level }) => {
     </SbEditable>
   )
 }
+
 
 export default Movie
