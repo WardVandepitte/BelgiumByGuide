@@ -102,7 +102,7 @@ const Movie = ({ data, level }) => {
             ))}
           </div>
           } 
-          {/*TWAS HIERBOVEN TE DOEN*/}
+          {/*TWAS HIERBOVEN TE DOEN met dat "}"*/}
 
           <div className={styles.mainpicture} style={{ backgroundImage: `url("${content.mainpicture.filename}")` }}>
           </div>
