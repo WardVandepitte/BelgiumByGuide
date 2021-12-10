@@ -36,7 +36,7 @@ const Components = {
   'text': Text,
   'selected-posts': PostsList,
   'movie': Movie,
-  'personality': Personality,
+  'Personality': Personality,
   'studio': Studio,
   'genre' : Genre,
   'country' : Country,

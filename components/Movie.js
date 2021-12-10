@@ -9,9 +9,9 @@ import InPageSlideshow from "./InPageSlideshow"
 import SmallCardList from "./SmallCardList"
 import AgeRating from "./AgeRating"
 
-const resolveDirectors = {
-  en: 'Directors',
-  nl: 'Regisseurs',
+const resolvePoi = {
+  en: 'Poi',
+  nl: 'Poi',
 }
 
 const resolveWriters = {
@@ -40,7 +40,7 @@ const Movie = ({ data, level }) => {
   if (level === 'data') {
     locale = data.story.lang;
     var content = data.story.content;
-    var directors = data.rels.filter(obj => {
+    var Poi = data.rels.filter(obj => {
       return content.poi.includes(obj.uuid);
     });
     var stars = data.rels.filter(obj => {
@@ -117,7 +117,7 @@ const Movie = ({ data, level }) => {
           </div>
           <div className={styles.peoplesegment}>
             <div className={styles.content}>
-              {directors && directors.length > 0 && <RelatedItemGallerySmall items={directors} title={resolveDirectors[locale]} type="personality"></RelatedItemGallerySmall>}
+              {Poi && Poi.length > 0 && <RelatedItemGallerySmall items={Poi} title={resolvePoi[locale]} type="personality"></RelatedItemGallerySmall>}
               {writers && writers.length > 0 && <RelatedItemGallerySmall items={writers} title={resolveWriters[locale]} type="personality"></RelatedItemGallerySmall>}
               {stars && stars.length > 0 && <RelatedItemGallerySmall items={stars} title={resolveStars[locale]} type="personality"></RelatedItemGallerySmall>}
             </div>
