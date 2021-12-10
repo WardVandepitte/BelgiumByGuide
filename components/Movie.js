@@ -41,7 +41,7 @@ const Movie = ({ data, level }) => {
     locale = data.story.lang;
     var content = data.story.content;
     var directors = data.rels.filter(obj => {
-      return content.directors.includes(obj.uuid);
+      return content.POI.includes(obj.uuid);
     });
     var stars = data.rels.filter(obj => {
       return content.stars.includes(obj.uuid);
