@@ -3,17 +3,17 @@ import React, { useState } from "react"
 
 const NavigationMobile = ({ locale, locales }) => {
 
-  const resolveMovies = {
-    en: 'Movies',
-    nl: 'Films',
+  const resolveCities = {
+    en: 'Cities',
+    nl: 'Steden',
   }
-  const resolvePeople = {
-    en: 'People',
-    nl: 'Mensen',
+  const resolvePlaces = {
+    en: 'Places',
+    nl: 'Plaatsen',
   }
-  const resolveNews = {
-    en: 'News',
-    nl: 'Nieuws',
+  const resolveEvents = {
+    en: 'Events',
+    nl: 'Evenementen',
   }
   const resolveMerchandise = {
     en: 'Shop',
@@ -45,13 +45,13 @@ const NavigationMobile = ({ locale, locales }) => {
         {navstate&&<div className={styles.navlinkswrapper}>
           <div className={styles.navlinks}>
             <div className={styles.navlink}>
-              <a href={`${defaultLocale}pages/movies`} className={styles.movie}>{resolveMovies[locale]}</a>
+              <a href={`${defaultLocale}pages/cities`} className={styles.movie}>{resolveCities[locale]}</a>
             </div>
             <div className={styles.navlink}>
-              <a href={`${defaultLocale}pages/people`} className={styles.personality}>{resolvePeople[locale]}</a>
+              <a href={`${defaultLocale}pages/places`} className={styles.personality}>{resolvePlaces[locale]}</a>
             </div>
             <div className={styles.navlink}>
-              <a href={`${defaultLocale}pages/news`} className={styles.newsitem}>{resolveNews[locale]}</a>
+              <a href={`${defaultLocale}pages/events`} className={styles.newsitem}>{resolveEvents[locale]}</a>
             </div>
             <div className={styles.navlink}>
               <a href={`${defaultLocale}pages/shop`} className={styles.product}>{resolveMerchandise[locale]}</a>
