@@ -1,8 +1,16 @@
 @import '../styles/colors';
 .carouselwrapper{
   display: grid;
-  box-shadow: 5px 5px 0px rgb(255, 255, 255);
-  margin:40px 0;
+  border: 15px solid rgb(255, 255, 255);
+  margin-bottom: 20px;
+  margin-right: 0;
+  display: block;
+  position: relative;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  
 }
 .item {
   display: grid;
