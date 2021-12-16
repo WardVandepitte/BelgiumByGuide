@@ -9,6 +9,7 @@ const Footer = () => {
           <img
             src="https://a.storyblok.com/f/135370/1400x200/63277145f1/bbblogo.png"
             alt="BBGLogo"
+            width={650,250}
             className=""
           />
         </div>
