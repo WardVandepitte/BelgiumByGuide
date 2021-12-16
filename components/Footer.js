@@ -7,12 +7,12 @@ const Footer = () => {
 
         <div className="">
           <img
-            src="https://a.storyblok.com/f/133261/3039x582/a60d166ec2/logo-colored-full.png/m/200x0"
-            alt="IMDBPlus Logo"
+            src="https://a.storyblok.com/f/135370/1400x200/63277145f1/bbblogo.png"
+            alt="BBGLogo"
             className=""
           />
         </div>
-        <p>IMDB Plus is every bit as good as IMDB. Plus!</p>
+        <p>BelgiumByGuide! The number one site to get to know Belgium.</p>
       </div>
     </footer>
 
