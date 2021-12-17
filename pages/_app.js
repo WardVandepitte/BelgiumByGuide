@@ -4,7 +4,6 @@ import '../styles/_fonts.scss'
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { hotjar } from 'react-hotjar'
-
 import * as ga from '../utils/ga'
 
 function MyApp({ Component, pageProps }) {
@@ -14,7 +13,7 @@ function MyApp({ Component, pageProps }) {
     const handleRouteChange = (url) => {
       // ga.pageview(url)
     }
-    //hotjar.initialize(2751894, 6)
+    hotjar.initialize(2752711, 6)
     //When the component is mounted, subscribe to router changes
     //and log those page views
     router.events.on('routeChangeComplete', handleRouteChange)
