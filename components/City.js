@@ -34,7 +34,7 @@ const resolveNews = {
   nl: 'Nieuws',
 }
 
-const Movie = ({ data, level }) => {
+const City = ({ data, level }) => {
   var locale = 'en';
   //enriching data
   if (level === 'data') {
@@ -132,4 +132,4 @@ const Movie = ({ data, level }) => {
   )
 }
 
-export default Movie
+export default City
