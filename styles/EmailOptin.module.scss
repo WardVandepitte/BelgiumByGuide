@@ -2,19 +2,19 @@
 
 .emailoptin {
     .optinbutton {
-        border: 5px black solid;
+        border: 5px rgb(255, 255, 255) solid;
         display: flex;
         align-items: center;
         justify-content: center;
         border-radius: 0;
         padding: 10px 20px;
-        background-color: $color-primary-product;
+        background-color:rgb(255,127, 127);
         color: black;
         font-size: 0.9em;
         font-weight: 800;
         cursor: pointer;
         &:hover{
-            background-color: $color-primary-newsitem;
+            background-color: rgb(255, 227, 227)
         }
     }
 }
