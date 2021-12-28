@@ -1,63 +1,28 @@
-import React, { useState } from "react"
-import SbEditable from "storyblok-react"
-import { render } from "storyblok-rich-text-react-renderer"
-import styles from "../styles/Movie.module.scss"
-import { getData } from "../utils/storyblok"
+import DynamicComponent from './DynamicComponent'
+import SbEditable from 'storyblok-react'
 
 const Weather = ({ data, level }) => {
-    var locale = 'en';
-    //enriching data
-    if (level === 'data') {
-      locale = data.story.lang;
-      var content = data.story.content;
-      var directors = data.rels.filter(obj => {
-        return content.directors.includes(obj.uuid);
-      });
-      var stars = data.rels.filter(obj => {
-        return content.stars.includes(obj.uuid);
-      });
-      var writers = data.rels.filter(obj => {
-        return content.writers.includes(obj.uuid);
-      })
-      var studios = data.rels.filter(obj => {
-        return content.studios.includes(obj.uuid);
-      })
-      var genres = data.rels.filter(obj => {
-        return content.genres.includes(obj.uuid);
-      })
-      if(content.agerating){
-           var agerating = data.rels.filter(obj => {
-             return content.agerating.includes(obj.uuid);
-           });
-        }
-    } else {
-      var content = data;
-    }
-  
-    const [products, setProducts] = useState([]);
-    getData(data.story.uuid, locale, content.preview = false, 'product', 'weather').then(
-      function (result) {
-        setProducts(result.data.stories);
-      });
-  
-    const [newsitems, setNewsitems] = useState([]);
-    getData(data.story.uuid, locale, content.preview = false, 'newsitem', 'weather').then(
-      function (result) {
-        setNewsitems(result.data.stories);
-      });
-  
-    var pictures = content.pictures;
-  
-    //returning the HTML
-    return (
-      <SbEditable content={content} key={content._uid}>
-       <head>
-           <h2>Ghent</h2>
-       </head>
-        
-      </SbEditable>
-    )
+  if(level==='data'){
+    var content = data.story.content;
+  } else {
+    var content = data;
   }
-  
-  export default Weather
-  
+  if(data.story&&data.story.lang){
+    var lang = data.story.lang;
+  } else {
+    var lang = 'default';
+  }
+  return (
+    <SbEditable content={content}>
+      <main>
+        {content.weerbody ? content.weerbody.map((content) =>
+          <DynamicComponent data={content} key={content._uid} locale={lang} />
+        ) : null}
+       {/* <hier komt de widget> */}
+      </main>
+    </SbEditable>
+  )
+}
+
+
+export default Weather
