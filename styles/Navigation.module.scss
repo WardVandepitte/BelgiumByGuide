@@ -51,9 +51,13 @@
           &.newsitem:hover {
             border: 5px solid $color-primary-newsitem;
           }
+          &.weather:hover {
+            border: 5px solid $color-primary-weather;
+          }
           &.product:hover {
             border: 5px solid $color-primary-product;
           }
+          
         }
 
       }
