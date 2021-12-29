@@ -127,6 +127,10 @@ const Movie = ({ data, level }) => {
           {newsitems && newsitems.length > 0 && <SmallCardList items={newsitems} title={resolveNews[locale]} type="newsitem"></SmallCardList>}
           {products && products.length > 0 && <SmallCardList items={products} title={resolveMerchandise[locale]} type="product"></SmallCardList>}
         </div>
+      
+        <h2>Weather</h2>
+        <a href="https://belgiumbyguide.vercel.app/pages/weather" title="Visit our weather page">Click here to see the latest weather updates</a>
+     
       </main>
     </SbEditable>
   )
