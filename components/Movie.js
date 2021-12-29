@@ -128,7 +128,7 @@ const Movie = ({ data, level }) => {
           {products && products.length > 0 && <SmallCardList items={products} title={resolveMerchandise[locale]} type="product"></SmallCardList>}
         </div>
       
-        <h2>Weather</h2>
+        <h2><b><font face="Karla">Weather</font></b></h2>
         <a href="https://belgiumbyguide.vercel.app/pages/weather" title="Visit our weather page">Click here to see the latest weather updates</a>
      
       </main>
