@@ -3,6 +3,7 @@ import SbEditable from "storyblok-react"
 import { render } from "storyblok-rich-text-react-renderer"
 import styles from "../styles/NewsItem.module.scss"
 import SmallCardList from "./SmallCardList"
+import { FacebookShareButton, FacebookIcon,TwitterShareButton, TwitterIcon, LinkedinShareButton, LinkedinIcon } from 'next-share';
 
 
 
@@ -30,6 +31,11 @@ const NewsItem = ({ data, level }) => {
           <h1 className={styles.title}>
             {content.title}
           </h1>
+          <div className="sharebar">
+            <FacebookShareButton url={"https://belgiumbyguide.vercel.app/"+data.story.full_slug} quote={content.short} hashtag={'#BelgiumByGuide'}><FacebookIcon size={32} round /></FacebookShareButton>
+            <LinkedinShareButton url={"https://belgiumbyguide.vercel.app/"+data.story.full_slug} summary={content.short}><LinkedinIcon size={32} round /></LinkedinShareButton>
+            <TwitterShareButton url={"https://belgiumbyguide.vercel.app/"+data.story.full_slug} title={content.title}><TwitterIcon size={32} round /></TwitterShareButton>
+          </div>
           <div className={styles.mainpicture} style={{ backgroundImage: `url("${content.mainpicture.filename}")` }}>
           </div>
           <div className={styles.short}>
