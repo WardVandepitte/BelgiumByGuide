@@ -18,6 +18,7 @@
     img {
       min-width: 200px !important;
     }
+    margin-top: 5px;
   }
 
   .navlinkswrapper {
@@ -70,6 +71,7 @@
 
     .navlocale {
       margin-left: 20px;
+      margin-top: -20px;
 
       a {
         text-decoration: none;
@@ -83,14 +85,16 @@
     }
   }
   ul {
+    margin-top: 0px;
     display: flex;
-    padding: 20px;
+    padding: 0px;
   }
   
   li {
-    margin-bottom: 10px;
+    margin-top: 0px;
+    margin-bottom: 0px;
     list-style-type: none;
-    padding: 10px;
+    padding: 0px;
   }
   
   a {
@@ -103,8 +107,8 @@
     content: '';
     display: block;
     width: 0;
-    height: 1px;
-    background: #000;
+    height: 3px;
+    background: rgb(255, 255, 255);
     transition: width .4s ease-in;
   }
   
