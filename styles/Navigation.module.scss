@@ -82,4 +82,33 @@
       }
     }
   }
+  ul {
+    display: flex;
+    padding: 20px;
+  }
+  
+  li {
+    margin-bottom: 10px;
+    list-style-type: none;
+    padding: 10px;
+  }
+  
+  a {
+    display: inline-block;
+    color: #000;
+    text-decoration: none;
+  }
+  
+  a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 1px;
+    background: #000;
+    transition: width .4s ease-in;
+  }
+  
+  a:hover::after {
+    width: 100%;
+  }
 }
